@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Balaji Gym &amp; Physique</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800&family=IBM+Plex+Mono:wght@500;600&family=IBM+Plex+Sans:wght@400;600&display=swap">
+<style>/* Layout: contact-sheet strip up top, run of show, then one wide card per look: refs left, settings right */
+:root{
+  --bg:#141211; --panel:#1d1a18; --line:#35302b; --fg:#ece6dd; --mute:#a39a8f;
+  --amber:#e0a458; --steel:#86a6c4; --bone:#d9cdb8; --must:#e0a458; --if:#7d8c74; --trip:#6b6f8a;
+  --display:"Big Shoulders Display","Oswald",Impact,sans-serif;
+  --body:"IBM Plex Sans",system-ui,sans-serif; --mono:"IBM Plex Mono",ui-monospace,monospace;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font:15px/1.55 var(--body);margin:0}
+img{max-width:100%}
+.wrap{max-width:1180px;margin:0 auto;padding-block:32px 48px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:grid;gap:40px}
+.top{display:grid;gap:14px}
+.eyebrow{font:500 12px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--amber)}
+h1{font:800 clamp(44px,8vw,96px)/.9 var(--display);letter-spacing:.01em;margin:0;text-transform:uppercase;text-wrap:balance}
+.lede{max-width:70ch;color:var(--mute);margin:0}
+.strip{display:grid;grid-template-columns:repeat(6,1fr);gap:8px}
+.th{position:relative;display:block;aspect-ratio:3/4;overflow:hidden;border-radius:3px;outline-offset:3px;max-width:100%}
+.th img{width:100%;height:100%;object-fit:cover;filter:grayscale(.3);transition:filter .2s}
+.th:hover img,.th:focus-visible img{filter:none}
+.th span{position:absolute;inset:auto 0 0;padding:18px 8px 6px;font:500 11px/1.2 var(--mono);color:var(--fg);background:linear-gradient(transparent,rgba(0,0,0,.85));letter-spacing:.04em}
+.th .dot{position:absolute;top:7px;right:7px}
+.dot{display:inline-block;width:9px;height:9px;border-radius:50%;box-shadow:0 0 0 2px rgba(0,0,0,.5)}
+.dot.p-must{background:var(--must)} .dot.p-if{background:var(--if)} .dot.p-trip{background:var(--trip)}
+.legend{display:flex;gap:18px;flex-wrap:wrap;margin:0;font:500 12px var(--mono);color:var(--mute)}
+.legend span{display:inline-flex;gap:7px;align-items:center}
+.plan{display:grid;grid-template-columns:1fr 1fr;gap:28px;border-top:1px solid var(--line);padding-top:24px}
+.plan p{margin:0 0 10px;max-width:62ch}
+.plan ul{margin:0;padding-left:18px;display:grid;gap:6px}
+.sched{list-style:none;margin:0 0 10px;padding:0;display:grid;gap:8px}
+.sched li{display:grid;grid-template-columns:52px 1fr;gap:10px}
+.sched span{font:600 13px/1.5 var(--mono);color:var(--amber);font-variant-numeric:tabular-nums}
+h3{font:600 11px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--mute);margin:0 0 12px}
+.kit{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;border-top:1px solid var(--line);padding-top:24px}
+.kit .note{grid-column:1/-1}
+.role{display:grid;grid-template-columns:92px 1fr;gap:10px;align-items:start}
+.chip{text-align:center;font:600 11px/1 var(--mono);letter-spacing:.04em;padding:5px 7px;border-radius:2px;white-space:nowrap;color:#141211}
+.c-ad{background:var(--amber)} .c-hf{background:var(--steel)} .c-it{background:var(--bone)}
+.note{font-size:13px;color:var(--mute);margin:0}
+.look{display:grid;grid-template-columns:minmax(0,360px) minmax(0,1fr);gap:28px;border-top:1px solid var(--line);padding-top:28px;scroll-margin-top:16px}
+.refs{display:grid;gap:8px;align-content:start;position:sticky;top:16px}
+.refs.many,.refs.three{grid-template-columns:1fr 1fr}
+.refs.three img:first-child{grid-column:1/-1}
+.refs img{width:100%;border-radius:3px;display:block}
+.body{display:grid;gap:16px;min-width:0}
+.lh{display:flex;gap:16px;align-items:flex-start}
+.no{font:800 56px/.8 var(--display);color:var(--amber)}
+h2{font:800 40px/.95 var(--display);text-transform:uppercase;margin:0;letter-spacing:.01em}
+.pri{display:inline-block;vertical-align:middle;margin-left:8px;font:600 10.5px/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;padding:5px 7px;border-radius:2px;border:1px solid currentColor;position:relative;top:-4px}
+.pri.p-must{color:var(--must)} .pri.p-if{color:#a7b59d} .pri.p-trip{color:#a3a7c4}
+.tag{margin:6px 0 0;color:var(--mute);font-size:14px}
+.loc{color:var(--bone)}
+.read{margin:0;max-width:70ch}
+.wear{margin:0;font-size:14px}
+.wear b,.notes b{display:inline-block;min-width:88px;font:600 11px/1 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--amber);margin-right:6px}
+.grid2{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:20px;align-items:start}
+.cam{display:grid;grid-template-columns:auto 1fr;margin:0;border:1px solid var(--line);border-radius:3px;background:var(--panel)}
+.cam dt,.cam dd{padding:7px 10px;border-bottom:1px solid var(--line);margin:0}
+.cam dt{font:500 11px/1.6 var(--mono);text-transform:uppercase;letter-spacing:.08em;color:var(--mute)}
+.cam dd{font:500 13.5px/1.45 var(--mono);color:var(--fg);font-variant-numeric:tabular-nums;min-width:0}
+.cam dt:last-of-type,.cam dd:last-of-type{border-bottom:0}
+.dia{width:100%;max-width:340px;background:var(--panel);border:1px solid var(--line);border-radius:3px}
+.dia .t{font:500 9.5px var(--mono);fill:var(--fg)} .dia .sm{fill:var(--mute)}
+.dia .bgline{stroke:var(--line);stroke-width:2;stroke-dasharray:4 3}
+.dia .subj{fill:var(--fg)} .dia .cam{fill:var(--mute)}
+.fix-ad{fill:var(--amber)} .fix-hf{fill:var(--steel)} .fix-it{fill:var(--bone)}
+.beam-ad{fill:var(--amber);fill-opacity:.16} .beam-hf{fill:var(--steel);fill-opacity:.16} .beam-it{fill:var(--bone);fill-opacity:.16}
+.over{stroke-dasharray:3 3;stroke-width:1.5}
+.over.beam-ad{stroke:var(--amber)} .over.beam-hf{stroke:var(--steel)}
+.lab-ad{fill:var(--amber)!important} .lab-hf{fill:var(--steel)!important} .lab-it{fill:var(--bone)!important}
+.lights{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.lights li{display:grid;grid-template-columns:92px 1fr;gap:12px;align-items:start}
+.notes{display:grid;gap:8px;border-left:2px solid var(--line);padding-left:14px}
+.notes p{margin:0;max-width:72ch}
+.end{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;border-top:1px solid var(--line);padding-top:24px}
+.end ul{margin:0;padding-left:18px;display:grid;gap:6px}
+.foot{font:500 12px var(--mono);color:var(--mute);border-top:1px solid var(--line);padding-top:16px}
+a{color:var(--amber)}
+a:focus-visible{outline:2px solid var(--amber)}
+@media (max-width:900px){
+  .look{grid-template-columns:1fr}.refs{position:static;max-width:520px}
+  .refs:not(.many):not(.three){grid-template-columns:minmax(0,300px)}
+  .plan,.kit,.end{grid-template-columns:1fr}
+}
+@media (max-width:640px){.strip{grid-template-columns:repeat(3,1fr)}.grid2{grid-template-columns:1fr}.lights li{grid-template-columns:1fr;gap:4px}.lights .chip{justify-self:start}h2{font-size:32px}.no{font-size:44px}}
+@media (prefers-reduced-motion:reduce){.th img{transition:none}}
+</style></head><body>
+<div class="wrap">
+  <header class="top">
+    <span class="eyebrow">Kai Visuals · Kaiboards · Sony A7 III</span>
+    <h1>Balaji<br>Gym &amp; Physique</h1>
+    <p class="lede">Twelve looks from twenty references, in shoot order: clothed lifestyle while he warms up, working sets, then shirtless low-key once he's pumped, and the black-corner studio looks last. Every setting is a starting point for the 24–105 f/4 and three lights. Take one test frame, read the histogram and adjust.</p>
+    <nav class="strip" aria-label="Looks"><a href="#look-1" class="th"><img src="img/p13.jpg" alt=""><span>01 Between Sets</span><i class="dot p-if" title="If time"></i></a><a href="#look-2" class="th"><img src="img/p07.jpg" alt=""><span>02 Gym Profile</span><i class="dot p-must" title="Must-get"></i></a><a href="#look-3" class="th"><img src="img/p04.jpg" alt=""><span>03 Movement</span><i class="dot p-if" title="If time"></i></a><a href="#look-4" class="th"><img src="img/p01.jpg" alt=""><span>04 B&amp;W Documentary</span><i class="dot p-if" title="If time"></i></a><a href="#look-5" class="th"><img src="img/b1.jpg" alt=""><span>05 Gym Wide</span><i class="dot p-must" title="Must-get"></i></a><a href="#look-6" class="th"><img src="img/b2a.jpg" alt=""><span>06 Top-Light Walk</span><i class="dot p-must" title="Must-get"></i></a><a href="#look-7" class="th"><img src="img/b4.jpg" alt=""><span>07 Halo</span><i class="dot p-if" title="If time"></i></a><a href="#look-8" class="th"><img src="img/b3.jpg" alt=""><span>08 Side Rake</span><i class="dot p-must" title="Must-get"></i></a><a href="#look-9" class="th"><img src="img/p03.jpg" alt=""><span>09 Compression Hero</span><i class="dot p-if" title="If time"></i></a><a href="#look-10" class="th"><img src="img/p02.jpg" alt=""><span>10 Curl on Black</span><i class="dot p-must" title="Must-get"></i></a><a href="#look-11" class="th"><img src="img/b5.jpg" alt=""><span>11 Black Void</span><i class="dot p-must" title="Must-get"></i></a><a href="#look-12" class="th"><img src="img/b6.jpg" alt=""><span>12 Basement</span><i class="dot p-trip" title="Separate trip"></i></a></nav>
+    <p class="legend"><span><i class="dot p-must"></i>Must-get</span><span><i class="dot p-if"></i>If time</span><span><i class="dot p-trip"></i>Separate trip</span></p>
+  </header>
+
+  <section class="plan">
+    <div>
+      <h3>2.5-hour run of show</h3>
+      <p>Twelve looks won't fit a 1:00–3:30 slot. Get the six must-gets, and add others only when a setup is already standing.</p>
+      <ol class="sched">
+        <li><span>1:00</span>Unload, set the black corner up early, test frames with your assistant standing in</li>
+        <li><span>1:20</span>02 Gym Profile, then 05 Gym Wide (gym lights on)</li>
+        <li><span>1:50</span>Dim the room: 06 Top-Light Walk, then 08 Side Rake</li>
+        <li><span>2:30</span>Black corner: 10 Curl on Black, then 11 Black Void</li>
+        <li><span>3:15</span>Pickups, BTS reel clips, pack down by 3:30</li>
+      </ol>
+      <p class="note">If time: 01 Between Sets, 03 Movement, 04 B&amp;W Documentary, 07 Halo, 09 Compression Hero.</p>
+    </div>
+    <div>
+      <h3>Base camera setup (every look)</h3>
+      <ul>
+        <li>Manual exposure, RAW. Flash in <b>Manual</b>, not TTL, so frames match across a sequence.</li>
+        <li>Sync tops out at 1/250s. Work at 1/125–1/200.</li>
+        <li><b>Live View Display → Setting Effect OFF</b> with flash, or the EVF goes black.</li>
+        <li>Mechanical shutter (silent mode disables flash).</li>
+        <li>The 24–105 stops at f/4. Bring the FE 50 for Between Sets, Gym Wide and Basement.</li>
+        <li>Hiffin at 10–20% as a focus light; it won't show at flash settings.</li>
+        <li>B&amp;W looks: Creative Style B&amp;W for preview. RAW keeps the colour.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="kit">
+    <div class="role"><span class="chip c-ad">AD200 Pro</span><span>The key in every look. Softbox + grid for controlled top and side light, bare reflector + grid for hard light.</span></div>
+    <div class="role"><span class="chip c-hf">Hiffin 60W</span><span>Continuous rim or accent, focus light, and the only light for reels.</span></div>
+    <div class="role"><span class="chip c-it">iT32</span><span>Small second rim or kicker at 1/32–1/128, fired as an X-radio slave (or optical S1).</span></div>
+    <p class="note">I couldn't open the Hiffin listing, so these settings assume a ~60W bi-colour/RGB LED. Take one test frame at your real distance. If it's too weak as a rim, use a slower shutter or higher ISO and lower the flash power to match.</p>
+  </section>
+
+  
+<article class="look" id="look-1">
+  <div class="refs many"><img src="img/p13.jpg" alt="Reference for Between Sets" loading="lazy"><img src="img/p10.jpg" alt="Reference for Between Sets" loading="lazy"></div>
+  <div class="body">
+    <header class="lh">
+      <span class="no">01</span>
+      <div><h2>Between Sets <span class="pri p-if">If time</span></h2><p class="tag">Warm lifestyle portrait · <span class="loc">Gym · lights on · clothed warm-up look</span></p></div>
+    </header>
+    <p class="read">Soft, directional light from one side and a warm, defocused gym behind him. Eye contact (bench) or eyes down on the plate. This is the friendly, clothed frame a gym or brand can actually use in ads, so it earns its place even in a dark set.</p>
+    <p class="wear"><b>Wear</b>White crew tee + navy/black shorts, or black tank</p>
+    <div class="grid2">
+      <section><h3>Camera · A7 III + 24–105 f/4</h3><dl class="cam"><dt>Mode</dt><dd>Manual · RAW</dd><dt>Focal</dt><dd>105mm at f/4 from 3–4m, or FE 50 at f/2 for the shallow plate shot</dd><dt>Aperture</dt><dd>f/4 (24–105) · f/2 (FE 50)</dd><dt>Shutter</dt><dd>1/160s</dd><dt>ISO</dt><dd>400</dd><dt>WB</dt><dd>5000K</dd><dt>AF</dt><dd>AF-C · Eye AF</dd></dl></section>
+      <section><h3>Light plan (top view)</h3><svg viewBox="0 0 260 210" class="dia" role="img" aria-label="Top-down lighting plan"><line x1="20" y1="14" x2="240" y2="14" class="bgline"/><text x="130" y="10" class="t sm" text-anchor="middle">Background</text><polygon points="88.1,137.9 137.1,103.1 122.9,88.9" class="beam-ad"/><g transform="translate(88.1,137.9) rotate(-45.0)"><rect x="-5" y="-11" width="10" height="22" rx="2" class="fix-ad"/></g><text x="88.1" y="153.9" class="t lab-ad" text-anchor="middle">AD200 Pro</text><polygon points="155.9,51.1 121.3,91.0 138.7,101.0" class="beam-hf"/><g transform="translate(155.9,51.1) rotate(120.0)"><rect x="-5" y="-11" width="10" height="22" rx="2" class="fix-hf"/></g><text x="155.9" y="39.1" class="t lab-hf" text-anchor="middle">Hiffin 60W</text><circle cx="130" cy="96" r="9" class="subj"/><text x="161" y="100" class="t sm">Balaji</text><path d="M121,198 h18 v-12 h-4 l-2,-4 h-6 l-2,4 h-4 z" class="cam"/><text x="146" y="196" class="t sm">105mm</text></svg></section>
+    </div>
+    <section><h3>Lights</h3><ul class="lights"><li><span class="chip c-ad">AD200 Pro</span><span>Softbox without grid, camera-left 45°, slightly above eye level, about 1.5m. 1/32. Big and close means soft.</span></li><li><span class="chip c-hf">Hiffin 60W</span><span>3200K at 50%, behind him camera-right, aimed at the back of his shoulder and hair. It fakes the warm window glow.</span></li><li><span class="chip c-it">iT32</span><span>Off.</span></li></ul></section>
+    <div class="notes">
+      <p><b>Direct him</b>Sit on the bench edge, forearms on knees, hands loosely clasped. Look into the lens, then off to camera-left. Second set: load a plate with eyes on the plate.</p>
+      <p><b>Watch for</b>Keep 5m or more between him and the background so the gym melts. A white tee clips first, so expose for the tee. Turn the gym lights on so the background has bokeh.</p>
+      <p><b>Edit</b>Warm, slightly lifted shadows, gentle teal in the background, skin warm but not orange.</p>
+    </div>
+  </div>
+</article>
+<article class="look" id="look-2">
+  <div class="refs many"><img src="img/p07.jpg" alt="Reference for Gym Profile" loading="lazy"><img src="img/p11.jpg" alt="Reference for Gym Profile" loading="lazy"></div>
+  <div class="body">
+    <header class="lh">
+      <span class="no">02</span>
+      <div><h2>Gym Profile <span class="pri p-must">Must-get</span></h2><p class="tag">Hard side light on the working set · <span class="loc">Gym · dumbbell rack / cable machine</span></p></div>
+    </header>
+    <p class="read">One hard key from the side and slightly above. It finds every vein and the bicep peak, while the gym behind falls 3 stops into darkness. A profile or head-down pose keeps it about the muscle and the effort.</p>
+    <p class="wear"><b>Wear</b>Black tank or sleeveless tee</p>
+    <div class="grid2">
+      <section><h3>Camera · A7 III + 24–105 f/4</h3><dl class="cam"><dt>Mode</dt><dd>Manual · RAW</dd><dt>Focal</dt><dd>85–105mm, camera at chest height</dd><dt>Aperture</dt><dd>f/4</dd><dt>Shutter</dt><dd>1/200s</dd><dt>ISO</dt><dd>400</dd><dt>WB</dt><dd>5600K</dd><dt>AF</dt><dd>AF-C · Eye AF (profile works). Tracking Spot for the cable shot</dd></dl></section>
+      <section><h3>Light plan (top view)</h3><svg viewBox="0 0 260 210" class="dia" role="img" aria-label="Top-down lighting plan"><line x1="20" y1="14" x2="240" y2="14" class="bgline"/><text x="130" y="10" class="t sm" text-anchor="middle">Background</text><polygon points="191.9,106.9 131.7,86.2 128.3,105.8" class="beam-ad"/><g transform="translate(191.9,106.9) rotate(-170.0)"><rect x="-5" y="-11" width="10" height="22" rx="2" class="fix-ad"/></g><text x="191.9" y="122.9" class="t lab-ad" text-anchor="middle">AD200 Pro</text><polygon points="89.6,47.8 122.3,102.4 137.7,89.6" class="beam-it"/><g transform="translate(89.6,47.8) rotate(50.0)"><rect x="-5" y="-11" width="10" height="22" rx="2" class="fix-it"/></g><text x="89.6" y="35.8" class="t lab-it" text-anchor="middle">iT32</text><polygon points="130.0,29.4 120.0,96.0 140.0,96.0" class="beam-hf"/><g transform="translate(130.0,29.4) rotate(90.0)"><rect x="-5" y="-11" width="10" height="22" rx="2" class="fix-hf"/></g><text x="130.0" y="17.4" class="t lab-hf" text-anchor="middle">Hiffin 60W</text><circle cx="130" cy="96" r="9" class="subj"/><text x="161" y="100" class="t sm">Balaji</text><path d="M121,198 h18 v-12 h-4 l-2,-4 h-6 l-2,4 h-4 z" class="cam"/><text x="146" y="196" class="t sm">85–105mm</text></svg></section>
+    </div>
+    <section><h3>Lights</h3><ul class="lights"><li><span class="chip c-ad">AD200 Pro</span><span>Bare reflector + grid (hard), camera-right 70–90°, about 30cm above head height, 1.5m away. 1/16. For the cable shot, move it overhead-front, camera-left.</span></li><li><span class="chip c-it">iT32</span><span>Rim rear-left at 1/64 on the back of the shoulder, so the dark tank doesn't merge into the dark gym.</span></li><li><span class="chip c-hf">Hiffin 60W</span><span>Optional: 6500K at 20%, low on the equipment behind for a cool separation glow.</span></li></ul></section>
+    <div class="notes">
+      <p><b>Direct him</b>Slow curl, squeeze and hold at the top for 1 second, eyes on the dumbbell. Cable: lean slightly forward, head down, pull and hold.</p>
+      <p><b>Watch for</b>Pump right before the take; veins fade in a few minutes. Shoot only at the peak of each rep. Ambient should sit about 3 stops under; if the rack glows, lower ISO.</p>
+      <p><b>Edit</b>Clarity on the arm only, warm skin, crushed background, slight vignette.</p>
+    </div>
+  </div>
+</article>
+<article class="look" id="look-3">
+  <div class="refs three"><img src="img/p04.jpg" alt="Reference for Movement" loading="lazy"><img src="img/p05.jpg" alt="Reference for Movement" loading="lazy"><img src="img/p08.jpg" alt="Reference for Movement" loading="lazy"></div>
+  <div class="body">
+    <header class="lh">
+      <span class="no">03</span>
+      <div><h2>Movement <span class="pri p-if">If time</span></h2><p class="tag">Freeze the rep · <span class="loc">Pull-up bar · battle ropes · front raise</span></p></div>
+    </header>
+    <p class="read">Flash freezes the action, and the angle sells it. Shoot low and up for the pull-up so the back looks huge, put the rope or plate in the near foreground for depth, and keep the face sharp behind it. The rope reference is high-key on grey; the other two are dark-gym.</p>
+    <p class="wear"><b>Wear</b>Shirtless or tank, grey/black shorts, clean sneakers</p>
+    <div class="grid2">
+      <section><h3>Camera · A7 III + 24–105 f/4</h3><dl class="cam"><dt>Mode</dt><dd>Manual · RAW</dd><dt>Focal</dt><dd>24mm low for the pull-up · 35mm close for the front raise</dd><dt>Aperture</dt><dd>f/5.6</dd><dt>Shutter</dt><dd>1/250s (max sync)</dd><dt>ISO</dt><dd>400</dd><dt>WB</dt><dd>5600K</dd><dt>AF</dt><dd>AF-C · Zone, or Tracking Wide · Eye AF for the front raise</dd><dt>Drive</dt><dd>Single shot, timed to the peak</dd></dl></section>
+      <section><h3>Light plan (top view)</h3><svg viewBox="0 0 260 210" class="dia" role="img" aria-label="Top-down lighting plan"><line x1="20" y1="14" x2="240" y2="14" class="bgline"/><text x="130" y="10" class="t sm" text-anchor="middle">Background</text><polygon points="85.5,140.5 137.1,103.1 122.9,88.9" class="beam-ad"/><g transform="translate(85.5,140.5) rotate(-45.0)"><rect x="-5" y="-11" width="10" height="22" rx="2" class="fix-ad"/></g><text x="85.5" y="156.5" class="t lab-ad" text-anchor="middle">AD200 Pro</text><polygon points="170.4,47.8 122.3,89.6 137.7,102.4" class="beam-it"/><g transform="translate(170.4,47.8) rotate(130.0)"><rect x="-5" y="-11" width="10" height="22" rx="2" class="fix-it"/></g><text x="170.4" y="35.8" class="t lab-it" text-anchor="middle">iT32</text><circle cx="130" cy="96" r="9" class="subj"/><text x="161" y="100" class="t sm">Balaji</text><path d="M121,198 h18 v-12 h-4 l-2,-4 h-6 l-2,4 h-4 z" class="cam"/><text x="146" y="196" class="t sm">24–35mm</text></svg></section>
+    </div>
+    <section><h3>Lights</h3><ul class="lights"><li><span class="chip c-ad">AD200 Pro</span><span>Standard reflector or softbox, camera-left 45°, high. Keep it at 1/16–1/8. Lower power means a shorter flash and crisper freeze.</span></li><li><span class="chip c-it">iT32</span><span>Rim behind him camera-right at 1/32. It traces the back and lats on the pull-up.</span></li><li><span class="chip c-hf">Hiffin 60W</span><span>Rope variant only: light a pale wall behind at 100% for a high-key ground. Otherwise use it as a focus light.</span></li></ul></section>
+    <div class="notes">
+      <p><b>Direct him</b>Pull-up: slow rep, pause at the top, squeeze the shoulder blades. Ropes: big double waves, and shoot from the rope ends. Front raise: push the plate toward the lens and look past it, into the camera.</p>
+      <p><b>Watch for</b>Single frames, not bursts: the AD200 needs a moment to recycle. Ambient must be at least 3 stops under, or you get motion ghosting. Get a spotter under the pull-up bar.</p>
+      <p><b>Edit</b>Punchy contrast, colour kept. Clean the chalk and sweat marks on the floor.</p>
+    </div>
+  </div>
+</article>
+<article class="look" id="look-4">
+  <div class="refs many"><img src="img/p01.jpg" alt="Reference for B&amp;W Documentary" loading="lazy"><img src="img/p12.jpg" alt="Reference for B&amp;W Documentary" loading="lazy"></div>
+  <div class="body">
+    <header class="lh">
+      <span class="no">04</span>
+      <div><h2>B&amp;W Documentary <span class="pri p-if">If time</span></h2><p class="tag">Gritty, looking through · <span class="loc">Gym · rack and benches</span></p></div>
+    </header>
+    <p class="read">Reportage feel. Shoot past a foreground body or object so the frame feels observed, not posed. Grainy B&amp;W, eyes peering out of a dark frame, top light from the gym ceiling doing most of the work.</p>
+    <p class="wear"><b>Wear</b>Black tank, then shirtless</p>
+    <div class="grid2">
+      <section><h3>Camera · A7 III + 24–105 f/4</h3><dl class="cam"><dt>Mode</dt><dd>Manual · RAW · B&amp;W preview</dd><dt>Focal</dt><dd>70–105mm</dd><dt>Aperture</dt><dd>f/4</dd><dt>Shutter</dt><dd>1/125s</dd><dt>ISO</dt><dd>3200–6400 for ambient (no flash), or 800 with flash</dd><dt>WB</dt><dd>Auto (going B&amp;W)</dd><dt>AF</dt><dd>AF-C · Eye AF (peering eyes)</dd></dl></section>
+      <section><h3>Light plan (top view)</h3><svg viewBox="0 0 260 210" class="dia" role="img" aria-label="Top-down lighting plan"><line x1="20" y1="14" x2="240" y2="14" class="bgline"/><text x="130" y="10" class="t sm" text-anchor="middle">Background</text><circle cx="130" cy="96" r="27" class="beam-ad over"/><text x="130" y="138" class="t lab-ad" text-anchor="middle">AD200 Pro overhead</text><circle cx="130" cy="96" r="9" class="subj"/><text x="161" y="100" class="t sm">Balaji</text><path d="M121,198 h18 v-12 h-4 l-2,-4 h-6 l-2,4 h-4 z" class="cam"/><text x="146" y="196" class="t sm">70–105mm</text></svg></section>
+    </div>
+    <section><h3>Lights</h3><ul class="lights"><li><span class="chip c-ad">AD200 Pro</span><span>Optional: overhead-front with grid at 1/64, just enough to lift the eyes above the gym light.</span></li><li><span class="chip c-hf">Hiffin 60W</span><span>Focus light only.</span></li><li><span class="chip c-it">iT32</span><span>Off.</span></li></ul></section>
+    <div class="notes">
+      <p><b>Direct him</b>Foreground: your assistant's shoulder 20–30cm from the lens, Balaji 4m behind holding dumbbells, staring through the gap. Bar shot: arms folded on a racked barbell, chin on forearms, eyes up to the lens.</p>
+      <p><b>Watch for</b>The foreground has to be very close to the lens to blur at f/4. Push ISO happily; grain suits this look.</p>
+      <p><b>Edit</b>B&amp;W, heavy grain, deep blacks, lifted mids. Burn everything except the eyes.</p>
+    </div>
+  </div>
+</article>
+<article class="look" id="look-5">
+  <div class="refs"><img src="img/b1.jpg" alt="Reference for Gym Wide" loading="lazy"></div>
+  <div class="body">
+    <header class="lh">
+      <span class="no">05</span>
+      <div><h2>Gym Wide <span class="pri p-must">Must-get</span></h2><p class="tag">Mirror-selfie silhouette · <span class="loc">Gym · practicals on</span></p></div>
+    </header>
+    <p class="read">Environmental frame. Balaji is small and centred, boxed in by the dumbbell rack in the foreground and the ceiling LED lines above. The ceiling spot top-lights his hair, shoulders and abs; everything else sits 2–3 stops under. The selfie pose is the story, and the real camera stands in for the mirror.</p>
+    <p class="wear"><b>Wear</b>Shirtless, black joggers</p>
+    <div class="grid2">
+      <section><h3>Camera · A7 III + 24–105 f/4</h3><dl class="cam"><dt>Mode</dt><dd>Manual · RAW</dd><dt>Focal</dt><dd>24–35mm, from behind the rack, lens at rack height</dd><dt>Aperture</dt><dd>f/4</dd><dt>Shutter</dt><dd>1/60s</dd><dt>ISO</dt><dd>1600–3200</dd><dt>WB</dt><dd>Custom off the gym LEDs (usually 4000–4800K)</dd><dt>AF</dt><dd>AF-C · Tracking: Flexible Spot M on his chest</dd></dl></section>
+      <section><h3>Light plan (top view)</h3><svg viewBox="0 0 260 210" class="dia" role="img" aria-label="Top-down lighting plan"><line x1="20" y1="14" x2="240" y2="14" class="bgline"/><text x="130" y="10" class="t sm" text-anchor="middle">Background</text><circle cx="130" cy="96" r="27" class="beam-ad over"/><text x="130" y="138" class="t lab-ad" text-anchor="middle">AD200 Pro overhead</text><polygon points="153.5,146.3 139.1,91.8 120.9,100.2" class="beam-hf"/><g transform="translate(153.5,146.3) rotate(-115.0)"><rect x="-5" y="-11" width="10" height="22" rx="2" class="fix-hf"/></g><text x="153.5" y="162.3" class="t lab-hf" text-anchor="middle">Hiffin 60W</text><circle cx="130" cy="96" r="9" class="subj"/><text x="161" y="100" class="t sm">Balaji</text><path d="M121,198 h18 v-12 h-4 l-2,-4 h-6 l-2,4 h-4 z" class="cam"/><text x="146" y="196" class="t sm">24–35mm</text></svg></section>
+    </div>
+    <section><h3>Lights</h3><ul class="lights"><li><span class="chip c-ad">AD200 Pro</span><span>Overhead about 60cm above his head, 20cm in front. Grid. 1/64. Job: make him the brightest thing in the room.</span></li><li><span class="chip c-hf">Hiffin 60W</span><span>3200K at 30–40%, low on camera-right, skimming along the dumbbell rack so the plates catch metallic highlights.</span></li><li><span class="chip c-it">iT32</span><span>Off.</span></li></ul></section>
+    <div class="notes">
+      <p><b>Direct him</b>Phone at chest height, eyes on the phone screen, weight on one leg, free hand loose at his abs. Slow exhale, light brace, shoot.</p>
+      <p><b>Watch for</b>Meter the ceiling LEDs first and set ISO so they sit just under clipping (zebras at 100+). A slightly cool flash against warm gym light is fine; the grade warms it.</p>
+      <p><b>Edit</b>Crush blacks, pull the highlights on the LED lines, desaturate everything except a little warmth in the skin. Soft vignette.</p>
+    </div>
+  </div>
+</article>
+<article class="look" id="look-6">
+  <div class="refs many"><img src="img/b2a.jpg" alt="Reference for Top-Light Walk" loading="lazy"><img src="img/b2b.jpg" alt="Reference for Top-Light Walk" loading="lazy"></div>
+  <div class="body">
+    <header class="lh">
+      <span class="no">06</span>
+      <div><h2>Top-Light Walk <span class="pri p-must">Must-get</span></h2><p class="tag">The carved walk-in · <span class="loc">Gym · room lights dimmed</span></p></div>
+    </header>
+    <p class="read">One hard-ish overhead key, slightly in front of him. Each ab segment gets a shadow under it, traps and delts flare bright, and the bowed head hides the eyes. Faint edges on both arms come from a pair of rims. The gym behind sits about 3 stops under. Both refs are the same image cropped differently.</p>
+    <p class="wear"><b>Wear</b>Shirtless, loose black joggers</p>
+    <div class="grid2">
+      <section><h3>Camera · A7 III + 24–105 f/4</h3><dl class="cam"><dt>Mode</dt><dd>Manual · RAW</dd><dt>Focal</dt><dd>70mm, camera at chest height, full length vertical</dd><dt>Aperture</dt><dd>f/5.6</dd><dt>Shutter</dt><dd>1/125s</dd><dt>ISO</dt><dd>400</dd><dt>WB</dt><dd>5600K</dd><dt>AF</dt><dd>AF-C · Tracking: Flexible Spot M on the sternum (his head is down, so Eye AF will fail)</dd></dl></section>
+      <section><h3>Light plan (top view)</h3><svg viewBox="0 0 260 210" class="dia" role="img" aria-label="Top-down lighting plan"><line x1="20" y1="14" x2="240" y2="14" class="bgline"/><text x="130" y="10" class="t sm" text-anchor="middle">Background</text><circle cx="130" cy="96" r="27" class="beam-ad over"/><text x="130" y="138" class="t lab-ad" text-anchor="middle">AD200 Pro overhead</text><polygon points="85.5,51.5 122.9,103.1 137.1,88.9" class="beam-it"/><g transform="translate(85.5,51.5) rotate(45.0)"><rect x="-5" y="-11" width="10" height="22" rx="2" class="fix-it"/></g><text x="85.5" y="39.5" class="t lab-it" text-anchor="middle">iT32</text><polygon points="174.5,51.5 122.9,88.9 137.1,103.1" class="beam-hf"/><g transform="translate(174.5,51.5) rotate(135.0)"><rect x="-5" y="-11" width="10" height="22" rx="2" class="fix-hf"/></g><text x="174.5" y="39.5" class="t lab-hf" text-anchor="middle">Hiffin 60W</text><circle cx="130" cy="96" r="9" class="subj"/><text x="161" y="100" class="t sm">Balaji</text><path d="M121,198 h18 v-12 h-4 l-2,-4 h-6 l-2,4 h-4 z" class="cam"/><text x="146" y="196" class="t sm">70mm</text></svg></section>
+    </div>
+    <section><h3>Lights</h3><ul class="lights"><li><span class="chip c-ad">AD200 Pro</span><span>Boomed straight overhead, 50–70cm above his head, 20–30cm toward camera. Softbox + grid. 1/16.</span></li><li><span class="chip c-it">iT32</span><span>Rim rear-left at 135°, shoulder height, about 1.5m away. 1/32. Flag it off the lens.</span></li><li><span class="chip c-hf">Hiffin 60W</span><span>Rim rear-right at 135°, 5600K, 100%. If it barely shows, go 1/60s and ISO 800, then drop the AD200 to 1/32.</span></li></ul></section>
+    <div class="notes">
+      <p><b>Direct him</b>Slow walk toward camera, 2–3 steps per take. Chin down, lats flared, arms hanging slightly away from the body, fingers loose. Fire on every second step.</p>
+      <p><b>Watch for</b>Sandbag the boom. Moving the light slightly back flattens the abs; moving it forward lights his face. The reference is heavily retouched and possibly AI-enhanced. Lighting gives you the carving, but the rest comes from his conditioning and dodge &amp; burn.</p>
+      <p><b>Edit</b>Dodge &amp; burn along each ab line, clarity on the torso only, cool desaturated background, warm-desaturated skin.</p>
+    </div>
+  </div>
+</article>
+<article class="look" id="look-7">
+  <div class="refs"><img src="img/b4.jpg" alt="Reference for Halo" loading="lazy"></div>
+  <div class="body">
+    <header class="lh">
+      <span class="no">07</span>
+      <div><h2>Halo <span class="pri p-if">If time</span></h2><p class="tag">Looking up into the hex light · <span class="loc">Gym with hexagon ceiling LEDs</span></p></div>
+    </header>
+    <p class="read">The hexagon LED is a practical in the frame and carries the concept. The key comes from above and slightly in front, so his face is lit only because he looks up into it. The camera is low and shooting up, which makes him look heroic.</p>
+    <p class="wear"><b>Wear</b>Shirtless, black fitted jeans, black cap, chain</p>
+    <div class="grid2">
+      <section><h3>Camera · A7 III + 24–105 f/4</h3><dl class="cam"><dt>Mode</dt><dd>Manual · RAW · B&amp;W preview</dd><dt>Focal</dt><dd>28–35mm, camera at waist height, tilted up</dd><dt>Aperture</dt><dd>f/5</dd><dt>Shutter</dt><dd>1/125s</dd><dt>ISO</dt><dd>800 (sets how bright the hex ring renders)</dd><dt>WB</dt><dd>5600K</dd><dt>AF</dt><dd>AF-C · Eye AF</dd></dl></section>
+      <section><h3>Light plan (top view)</h3><svg viewBox="0 0 260 210" class="dia" role="img" aria-label="Top-down lighting plan"><line x1="20" y1="14" x2="240" y2="14" class="bgline"/><text x="130" y="10" class="t sm" text-anchor="middle">Background</text><circle cx="130" cy="96" r="27" class="beam-ad over"/><text x="130" y="138" class="t lab-ad" text-anchor="middle">AD200 Pro overhead</text><polygon points="87.2,45.0 122.3,102.4 137.7,89.6" class="beam-it"/><g transform="translate(87.2,45.0) rotate(50.0)"><rect x="-5" y="-11" width="10" height="22" rx="2" class="fix-it"/></g><text x="87.2" y="33.0" class="t lab-it" text-anchor="middle">iT32</text><polygon points="143.9,134.2 139.4,92.6 120.6,99.4" class="beam-hf"/><g transform="translate(143.9,134.2) rotate(-110.0)"><rect x="-5" y="-11" width="10" height="22" rx="2" class="fix-hf"/></g><text x="143.9" y="150.2" class="t lab-hf" text-anchor="middle">Hiffin 60W</text><circle cx="130" cy="96" r="9" class="subj"/><text x="161" y="100" class="t sm">Balaji</text><path d="M121,198 h18 v-12 h-4 l-2,-4 h-6 l-2,4 h-4 z" class="cam"/><text x="146" y="196" class="t sm">28–35mm</text></svg></section>
+    </div>
+    <section><h3>Lights</h3><ul class="lights"><li><span class="chip c-ad">AD200 Pro</span><span>Overhead, 30cm in front of his face, softbox + grid. 1/32.</span></li><li><span class="chip c-it">iT32</span><span>Rear-left, low, 1/64. Just an edge on the arm and lat.</span></li><li><span class="chip c-hf">Hiffin 60W</span><span>Focus and modelling light at 10–20%.</span></li></ul></section>
+    <div class="notes">
+      <p><b>Direct him</b>Feet planted, arms hanging, chin up all the way, eyes on the light. Get a variant with eyes closed.</p>
+      <p><b>Watch for</b>This only works if the gym has a hex ceiling. Without one, skip it or do it with flash only at ISO 100. The ring's brightness is controlled only by ISO and shutter speed.</p>
+      <p><b>Edit</b>B&amp;W, deep blacks, slight glow on the ring, burn the frame edges.</p>
+    </div>
+  </div>
+</article>
+<article class="look" id="look-8">
+  <div class="refs"><img src="img/b3.jpg" alt="Reference for Side Rake" loading="lazy"></div>
+  <div class="body">
+    <header class="lh">
+      <span class="no">08</span>
+      <div><h2>Side Rake <span class="pri p-must">Must-get</span></h2><p class="tag">B&amp;W window rake · <span class="loc">Gym · beside a door frame</span></p></div>
+    </header>
+    <p class="read">A single source from camera-left, at 90° or slightly behind, skimming across the torso. Raking light means maximum texture. His face turns away into shadow and his hand is pressed on the frame. It looks like a grainy reel still.</p>
+    <p class="wear"><b>Wear</b>Shirtless, black bottoms</p>
+    <div class="grid2">
+      <section><h3>Camera · A7 III + 24–105 f/4</h3><dl class="cam"><dt>Mode</dt><dd>Manual · RAW · B&amp;W preview</dd><dt>Focal</dt><dd>50mm, tight from head to mid-thigh, subject pushed to frame right</dd><dt>Aperture</dt><dd>f/4</dd><dt>Shutter</dt><dd>1/125s</dd><dt>ISO</dt><dd>400</dd><dt>WB</dt><dd>5600K</dd><dt>AF</dt><dd>AF-C · Tracking: Flexible Spot S on the near shoulder</dd></dl></section>
+      <section><h3>Light plan (top view)</h3><svg viewBox="0 0 260 210" class="dia" role="img" aria-label="Top-down lighting plan"><line x1="20" y1="14" x2="240" y2="14" class="bgline"/><text x="130" y="10" class="t sm" text-anchor="middle">Background</text><polygon points="86.3,88.3 128.3,105.8 131.7,86.2" class="beam-ad"/><g transform="translate(86.3,88.3) rotate(10.0)"><rect x="-5" y="-11" width="10" height="22" rx="2" class="fix-ad"/></g><text x="86.3" y="76.3" class="t lab-ad" text-anchor="middle">AD200 Pro</text><circle cx="130" cy="96" r="9" class="subj"/><text x="161" y="100" class="t sm">Balaji</text><path d="M121,198 h18 v-12 h-4 l-2,-4 h-6 l-2,4 h-4 z" class="cam"/><text x="146" y="196" class="t sm">50mm</text></svg></section>
+    </div>
+    <section><h3>Lights</h3><ul class="lights"><li><span class="chip c-ad">AD200 Pro</span><span>Softbox without grid, camera-left at about 100°, chest height, 0.8–1m. Feathered forward. 1/32.</span></li><li><span class="chip c-hf">Hiffin 60W</span><span>Reel version: same position, 1/50s, f/4, ISO 1600–3200, 25p.</span></li><li><span class="chip c-it">iT32</span><span>Off. One light only.</span></li></ul></section>
+    <div class="notes">
+      <p><b>Direct him</b>Near hand flat on the frame above head height, chest rotated toward the light, face turned away. Breathe in and hold.</p>
+      <p><b>Watch for</b>If the abs look flat, the light is too far toward camera. Pull it back to 110°.</p>
+      <p><b>Edit</b>B&amp;W, strong S-curve, slightly lifted blacks, +25 grain, a touch of softness.</p>
+    </div>
+  </div>
+</article>
+<article class="look" id="look-9">
+  <div class="refs many"><img src="img/p03.jpg" alt="Reference for Compression Hero" loading="lazy"><img src="img/p09.jpg" alt="Reference for Compression Hero" loading="lazy"></div>
+  <div class="body">
+    <header class="lh">
+      <span class="no">09</span>
+      <div><h2>Compression Hero <span class="pri p-if">If time</span></h2><p class="tag">Clothed power stance · <span class="loc">Black corner, then wide in the gym</span></p></div>
+    </header>
+    <p class="read">A big soft key from the front, with rims outlining the arms so the forearms and veins read against black. Chin up and hands on hips on black, or arms crossed in a full-length gym frame. A strong clothed option for a gym or supplement-brand client.</p>
+    <p class="wear"><b>Wear</b>Dark compression tee, black shorts over black tights</p>
+    <div class="grid2">
+      <section><h3>Camera · A7 III + 24–105 f/4</h3><dl class="cam"><dt>Mode</dt><dd>Manual · RAW</dd><dt>Focal</dt><dd>70mm on black · 35mm full length in the gym</dd><dt>Aperture</dt><dd>f/5.6 on black · f/4 in the gym</dd><dt>Shutter</dt><dd>1/125s on black · 1/80s in the gym</dd><dt>ISO</dt><dd>400 on black, room dark · 800 in the gym</dd><dt>WB</dt><dd>5600K</dd><dt>AF</dt><dd>AF-C · Eye AF</dd></dl></section>
+      <section><h3>Light plan (top view)</h3><svg viewBox="0 0 260 210" class="dia" role="img" aria-label="Top-down lighting plan"><line x1="20" y1="14" x2="240" y2="14" class="bgline"/><text x="130" y="10" class="t sm" text-anchor="middle">Background</text><polygon points="104.1,140.9 138.7,101.0 121.3,91.0" class="beam-ad"/><g transform="translate(104.1,140.9) rotate(-60.0)"><rect x="-5" y="-11" width="10" height="22" rx="2" class="fix-ad"/></g><text x="104.1" y="156.9" class="t lab-ad" text-anchor="middle">AD200 Pro</text><polygon points="88.1,54.1 122.9,103.1 137.1,88.9" class="beam-it"/><g transform="translate(88.1,54.1) rotate(45.0)"><rect x="-5" y="-11" width="10" height="22" rx="2" class="fix-it"/></g><text x="88.1" y="42.1" class="t lab-it" text-anchor="middle">iT32</text><polygon points="164.0,62.0 122.9,88.9 137.1,103.1" class="beam-hf"/><g transform="translate(164.0,62.0) rotate(135.0)"><rect x="-5" y="-11" width="10" height="22" rx="2" class="fix-hf"/></g><text x="164.0" y="50.0" class="t lab-hf" text-anchor="middle">Hiffin 60W</text><circle cx="130" cy="96" r="9" class="subj"/><text x="161" y="100" class="t sm">Balaji</text><path d="M121,198 h18 v-12 h-4 l-2,-4 h-6 l-2,4 h-4 z" class="cam"/><text x="146" y="196" class="t sm">35–70mm</text></svg></section>
+    </div>
+    <section><h3>Lights</h3><ul class="lights"><li><span class="chip c-ad">AD200 Pro</span><span>Softbox without grid, front camera-left 30°, above his eye line, about 1m. 1/16. For the full-length gym frame, step it back to 2m.</span></li><li><span class="chip c-it">iT32</span><span>Rim rear-left 135°, 1/32.</span></li><li><span class="chip c-hf">Hiffin 60W</span><span>Rim rear-right 135°, 5600K, 100%.</span></li></ul></section>
+    <div class="notes">
+      <p><b>Direct him</b>Hands on hips, elbows wide, chest proud, chin up and eyes up. Then feet wide, arms crossed with forearms pressed so they swell, straight serious stare into the lens.</p>
+      <p><b>Watch for</b>Tug the compression tee down so it doesn't bunch at the waist. Avoid big brand logos unless it's a brand shoot.</p>
+      <p><b>Edit</b>Neutral-cool grade, clarity on the forearms, keep the black clean.</p>
+    </div>
+  </div>
+</article>
+<article class="look" id="look-10">
+  <div class="refs many"><img src="img/p02.jpg" alt="Reference for Curl on Black" loading="lazy"><img src="img/p06.jpg" alt="Reference for Curl on Black" loading="lazy"></div>
+  <div class="body">
+    <header class="lh">
+      <span class="no">10</span>
+      <div><h2>Curl on Black <span class="pri p-must">Must-get</span></h2><p class="tag">Studio B&amp;W curl · <span class="loc">Black corner + black cloth</span></p></div>
+    </header>
+    <p class="read">The studio version of the gym curl. A high side key lights the face and the front of the bicep, a rim on the far shoulder carves the delt, and the background is pure black. B&amp;W, with the eyes down on the weight.</p>
+    <p class="wear"><b>Wear</b>Black tank, black watch</p>
+    <div class="grid2">
+      <section><h3>Camera · A7 III + 24–105 f/4</h3><dl class="cam"><dt>Mode</dt><dd>Manual · RAW · B&amp;W preview</dd><dt>Focal</dt><dd>70–85mm, chest height, waist up</dd><dt>Aperture</dt><dd>f/5.6</dd><dt>Shutter</dt><dd>1/125s</dd><dt>ISO</dt><dd>400, room lights OFF</dd><dt>WB</dt><dd>5600K</dd><dt>AF</dt><dd>AF-C · Eye AF, falling back to Tracking Spot on the face</dd></dl></section>
+      <section><h3>Light plan (top view)</h3><svg viewBox="0 0 260 210" class="dia" role="img" aria-label="Top-down lighting plan"><line x1="20" y1="14" x2="240" y2="14" class="bgline"/><text x="130" y="10" class="t sm" text-anchor="middle">Background</text><polygon points="89.8,114.8 134.2,105.1 125.8,86.9" class="beam-ad"/><g transform="translate(89.8,114.8) rotate(-25.0)"><rect x="-5" y="-11" width="10" height="22" rx="2" class="fix-ad"/></g><text x="89.8" y="130.8" class="t lab-ad" text-anchor="middle">AD200 Pro</text><polygon points="169.2,56.8 122.9,88.9 137.1,103.1" class="beam-it"/><g transform="translate(169.2,56.8) rotate(135.0)"><rect x="-5" y="-11" width="10" height="22" rx="2" class="fix-it"/></g><text x="169.2" y="44.8" class="t lab-it" text-anchor="middle">iT32</text><polygon points="98.6,41.5 121.3,101.0 138.7,91.0" class="beam-hf"/><g transform="translate(98.6,41.5) rotate(60.0)"><rect x="-5" y="-11" width="10" height="22" rx="2" class="fix-hf"/></g><text x="98.6" y="29.5" class="t lab-hf" text-anchor="middle">Hiffin 60W</text><circle cx="130" cy="96" r="9" class="subj"/><text x="161" y="100" class="t sm">Balaji</text><path d="M121,198 h18 v-12 h-4 l-2,-4 h-6 l-2,4 h-4 z" class="cam"/><text x="146" y="196" class="t sm">70–85mm</text></svg></section>
+    </div>
+    <section><h3>Lights</h3><ul class="lights"><li><span class="chip c-ad">AD200 Pro</span><span>Softbox + grid, camera-left 60–70°, high and tilted down, about 1m. 1/32.</span></li><li><span class="chip c-it">iT32</span><span>Rim rear-right 135°, shoulder height, 1/32. This makes the bright delt edge in both refs.</span></li><li><span class="chip c-hf">Hiffin 60W</span><span>Focus light, or a second rim from behind-left at low power.</span></li></ul></section>
+    <div class="notes">
+      <p><b>Direct him</b>Curl to the top and hold, wrist turned so the dumbbell shows its plates. Eyes on the weight, chin down slightly, jaw relaxed. Then a both-arms version.</p>
+      <p><b>Watch for</b>Keep him at least 2.5m from the backdrop. Use an old-school plate-loaded dumbbell if the gym has one; it reads better than a hex dumbbell.</p>
+      <p><b>Edit</b>B&amp;W, dodge the bicep and veins, burn the background to pure black, light vignette.</p>
+    </div>
+  </div>
+</article>
+<article class="look" id="look-11">
+  <div class="refs"><img src="img/b5.jpg" alt="Reference for Black Void" loading="lazy"></div>
+  <div class="body">
+    <header class="lh">
+      <span class="no">11</span>
+      <div><h2>Black Void <span class="pri p-must">Must-get</span></h2><p class="tag">Clean studio physique · <span class="loc">Black corner + black cloth</span></p></div>
+    </header>
+    <p class="read">Classic three-light physique. A high key from front camera-right lights the top of the head, shoulders and chest; two rims draw both arm outlines; pure black void. The reference was cut out and placed on black. Doing it in camera looks cleaner.</p>
+    <p class="wear"><b>Wear</b>Shirtless, black shorts with a clean waistband</p>
+    <div class="grid2">
+      <section><h3>Camera · A7 III + 24–105 f/4</h3><dl class="cam"><dt>Mode</dt><dd>Manual · RAW</dd><dt>Focal</dt><dd>85–105mm, chest height, head to mid-thigh</dd><dt>Aperture</dt><dd>f/5.6</dd><dt>Shutter</dt><dd>1/125s</dd><dt>ISO</dt><dd>400, room lights OFF</dd><dt>WB</dt><dd>5600K</dd><dt>AF</dt><dd>AF-C · Tracking: Flexible Spot M (head down)</dd></dl></section>
+      <section><h3>Light plan (top view)</h3><svg viewBox="0 0 260 210" class="dia" role="img" aria-label="Top-down lighting plan"><line x1="20" y1="14" x2="240" y2="14" class="bgline"/><text x="130" y="10" class="t sm" text-anchor="middle">Background</text><polygon points="171.9,137.9 137.1,88.9 122.9,103.1" class="beam-ad"/><g transform="translate(171.9,137.9) rotate(-135.0)"><rect x="-5" y="-11" width="10" height="22" rx="2" class="fix-ad"/></g><text x="171.9" y="153.9" class="t lab-ad" text-anchor="middle">AD200 Pro</text><polygon points="88.1,54.1 122.9,103.1 137.1,88.9" class="beam-it"/><g transform="translate(88.1,54.1) rotate(45.0)"><rect x="-5" y="-11" width="10" height="22" rx="2" class="fix-it"/></g><text x="88.1" y="42.1" class="t lab-it" text-anchor="middle">iT32</text><polygon points="164.0,62.0 122.9,88.9 137.1,103.1" class="beam-hf"/><g transform="translate(164.0,62.0) rotate(135.0)"><rect x="-5" y="-11" width="10" height="22" rx="2" class="fix-hf"/></g><text x="164.0" y="50.0" class="t lab-hf" text-anchor="middle">Hiffin 60W</text><circle cx="130" cy="96" r="9" class="subj"/><text x="161" y="100" class="t sm">Balaji</text><path d="M121,198 h18 v-12 h-4 l-2,-4 h-6 l-2,4 h-4 z" class="cam"/><text x="146" y="196" class="t sm">85–105mm</text></svg></section>
+    </div>
+    <section><h3>Lights</h3><ul class="lights"><li><span class="chip c-ad">AD200 Pro</span><span>Key camera-right 45°, stand at 2.2m tilted down 45°, about 1.2m. Softbox + grid. 1/32.</span></li><li><span class="chip c-it">iT32</span><span>Rim rear-left 135°, 1/32, card snoot or flag.</span></li><li><span class="chip c-hf">Hiffin 60W</span><span>Rim rear-right 135°, 5600K, 100%, about 0.8m.</span></li></ul></section>
+    <div class="notes">
+      <p><b>Direct him</b>Body turned 30° from the key, head down toward the key shoulder, slight forward lean, lats flared, arms relaxed.</p>
+      <p><b>Watch for</b>Why ISO 400 and not f/8 at ISO 100? At f/8 the Hiffin rim disappears. Flash is controlled by power and aperture, continuous light by shutter and ISO.</p>
+      <p><b>Edit</b>Brush the background to pure black, dodge &amp; burn the muscle lines, warm-neutral skin.</p>
+    </div>
+  </div>
+</article>
+<article class="look" id="look-12">
+  <div class="refs"><img src="img/b6.jpg" alt="Reference for Basement" loading="lazy"></div>
+  <div class="body">
+    <header class="lh">
+      <span class="no">12</span>
+      <div><h2>Basement <span class="pri p-trip">Separate trip</span></h2><p class="tag">Parking-lot night · <span class="loc">Covered parking · separate location</span></p></div>
+    </header>
+    <p class="read">Location tells the story: the EXIT sign, pillars, cones and fluorescent tubes. A single high key from camera-right lands on his hair, chest and abs. The basement ambient is kept 2–3 stops under, so the space reads without competing.</p>
+    <p class="wear"><b>Wear</b>Shirtless, black joggers</p>
+    <div class="grid2">
+      <section><h3>Camera · A7 III + 24–105 f/4</h3><dl class="cam"><dt>Mode</dt><dd>Manual · RAW</dd><dt>Focal</dt><dd>35mm, chest height</dd><dt>Aperture</dt><dd>f/4 (or FE 50 at f/2, ISO 400)</dd><dt>Shutter</dt><dd>1/50s, dragging the shutter for ambient</dd><dt>ISO</dt><dd>1600</dd><dt>WB</dt><dd>Custom off the tubes, about 4000K</dd><dt>AF</dt><dd>AF-C · Eye AF</dd></dl></section>
+      <section><h3>Light plan (top view)</h3><svg viewBox="0 0 260 210" class="dia" role="img" aria-label="Top-down lighting plan"><line x1="20" y1="14" x2="240" y2="14" class="bgline"/><text x="130" y="10" class="t sm" text-anchor="middle">Pillars · EXIT sign · cones</text><polygon points="159.6,147.3 138.7,91.0 121.3,101.0" class="beam-ad"/><g transform="translate(159.6,147.3) rotate(-120.0)"><rect x="-5" y="-11" width="10" height="22" rx="2" class="fix-ad"/></g><text x="159.6" y="163.3" class="t lab-ad" text-anchor="middle">AD200 Pro</text><polygon points="89.6,47.8 122.3,102.4 137.7,89.6" class="beam-it"/><g transform="translate(89.6,47.8) rotate(50.0)"><rect x="-5" y="-11" width="10" height="22" rx="2" class="fix-it"/></g><text x="89.6" y="35.8" class="t lab-it" text-anchor="middle">iT32</text><circle cx="130" cy="96" r="9" class="subj"/><text x="161" y="100" class="t sm">Balaji</text><path d="M121,198 h18 v-12 h-4 l-2,-4 h-6 l-2,4 h-4 z" class="cam"/><text x="146" y="196" class="t sm">35mm</text></svg></section>
+    </div>
+    <section><h3>Lights</h3><ul class="lights"><li><span class="chip c-ad">AD200 Pro</span><span>Key camera-right 30°, stand at 2.2m, about 1.2m. Softbox + grid. 1/64.</span></li><li><span class="chip c-it">iT32</span><span>Optional kicker rear-left, 1/128, to separate him from the pillars.</span></li><li><span class="chip c-hf">Hiffin 60W</span><span>BTS reel light, or a backup key at ISO 3200.</span></li></ul></section>
+    <div class="notes">
+      <p><b>Direct him</b>Hands on hips, head turned sharply toward the light, chest to camera. Keep the EXIT sign and a lit pillar in clean space either side of his head.</p>
+      <p><b>Watch for</b>Meter ambient first so it sits 2–2.5 stops under, then add flash. Get permission from building security.</p>
+      <p><b>Edit</b>Saturation down 30–40%, keep some yellow in the pillars, crush shadows, radial lift on the subject.</p>
+    </div>
+  </div>
+</article>
+
+  <section class="end">
+    <div>
+      <h3>Balaji's prep checklist</h3>
+      <ul>
+        <li>Haircut and any body-hair trimming 2–3 days before, not the day before</li>
+        <li>Sleep 7–8 hours; skip salty or junk food and alcohol the night before</li>
+        <li>Nails trimmed, beard lines clean</li>
+        <li>No lotion or oil on shoot day (sheen is done on set). Clear deodorant only</li>
+        <li>Small snack 60–90 min before, normal water intake</li>
+        <li>Bring his own hair clay and a comb, a resistance band, a towel, water</li>
+      </ul>
+    </div>
+    <div>
+      <h3>Wardrobe to bring</h3>
+      <ul>
+        <li>Black tank or sleeveless tee</li>
+        <li>Dark compression tee and black tights</li>
+        <li>White crew tee</li>
+        <li>Loose black joggers, fitted black jeans</li>
+        <li>Black shorts and grey shorts</li>
+        <li>Clean black sneakers, black cap, thin chain, black watch</li>
+        <li>No big logos, stripes or shiny fabric</li>
+      </ul>
+    </div>
+    <div>
+      <h3>Your bag and the reel</h3>
+      <ul>
+        <li>Model release form, water and glycerin 1:1 spray bottle, small towel, black cloth and clamps, sandbags for the boom</li>
+        <li>Reel: 4K 25p, 1/50s, WB locked at 5600K, one picture profile for every clip. Use PP off or HLG3, not S-Log2 (dark 8-bit footage turns noisy)</li>
+        <li>Side Rake and Black Void move straight to video with the Hiffin as key, using slow push-ins on the Ronin SC</li>
+      </ul>
+    </div>
+  </section>
+  <footer class="foot">Reference images are for internal planning only and belong to their original photographers.</footer>
+</div>
+</body></html>
