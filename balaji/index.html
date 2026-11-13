@@ -6,7 +6,7 @@
 <style>/* Layout: contact-sheet strip up top, run of show, then one wide card per look: refs left, settings right */
 :root{
   --bg:#141211; --panel:#1d1a18; --line:#35302b; --fg:#ece6dd; --mute:#a39a8f;
-  --amber:#e0a458; --steel:#86a6c4; --bone:#d9cdb8; --must:#e0a458; --if:#7d8c74; --trip:#6b6f8a;
+  --amber:#e0a458; --steel:#86a6c4; --bone:#d9cdb8; --must:#e0a458; --if:#7d8c74; --trip:#6b6f8a; --gi:#b0665c;
   --display:"Big Shoulders Display","Oswald",Impact,sans-serif;
   --body:"IBM Plex Sans",system-ui,sans-serif; --mono:"IBM Plex Mono",ui-monospace,monospace;
   color-scheme:dark;
@@ -26,7 +26,7 @@ h1{font:800 clamp(44px,8vw,96px)/.9 var(--display);letter-spacing:.01em;margin:0
 .th span{position:absolute;inset:auto 0 0;padding:18px 8px 6px;font:500 11px/1.2 var(--mono);color:var(--fg);background:linear-gradient(transparent,rgba(0,0,0,.85));letter-spacing:.04em}
 .th .dot{position:absolute;top:7px;right:7px}
 .dot{display:inline-block;width:9px;height:9px;border-radius:50%;box-shadow:0 0 0 2px rgba(0,0,0,.5)}
-.dot.p-must{background:var(--must)} .dot.p-if{background:var(--if)} .dot.p-trip{background:var(--trip)}
+.dot.p-must{background:var(--must)} .dot.p-if{background:var(--if)} .dot.p-trip{background:var(--trip)} .dot.p-gi{background:var(--gi)}
 .legend{display:flex;gap:18px;flex-wrap:wrap;margin:0;font:500 12px var(--mono);color:var(--mute)}
 .legend span{display:inline-flex;gap:7px;align-items:center}
 .plan{display:grid;grid-template-columns:1fr 1fr;gap:28px;border-top:1px solid var(--line);padding-top:24px}
@@ -52,7 +52,7 @@ h3{font:600 11px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;col
 .no{font:800 56px/.8 var(--display);color:var(--amber)}
 h2{font:800 40px/.95 var(--display);text-transform:uppercase;margin:0;letter-spacing:.01em}
 .pri{display:inline-block;vertical-align:middle;margin-left:8px;font:600 10.5px/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;padding:5px 7px;border-radius:2px;border:1px solid currentColor;position:relative;top:-4px}
-.pri.p-must{color:var(--must)} .pri.p-if{color:#a7b59d} .pri.p-trip{color:#a3a7c4}
+.pri.p-must{color:var(--must)} .pri.p-if{color:#a7b59d} .pri.p-trip{color:#a3a7c4} .pri.p-gi{color:#d08a80}
 .tag{margin:6px 0 0;color:var(--mute);font-size:14px}
 .loc{color:var(--bone)}
 .read{margin:0;max-width:70ch}
@@ -93,16 +93,16 @@ a:focus-visible{outline:2px solid var(--amber)}
 <div class="wrap">
   <header class="top">
     <span class="eyebrow">Kai Visuals · Kaiboards · Sony A7 III</span>
-    <h1>Balaji<br>Gym &amp; Physique</h1>
-    <p class="lede">Twelve looks from twenty references, in shoot order: clothed lifestyle while he warms up, working sets, then shirtless low-key once he's pumped, and the black-corner studio looks last. Every setting is a starting point for the 24–105 f/4 and three lights. Take one test frame, read the histogram and adjust.</p>
-    <nav class="strip" aria-label="Looks"><a href="#look-1" class="th"><img src="img/p13.jpg" alt=""><span>01 Between Sets</span><i class="dot p-if" title="If time"></i></a><a href="#look-2" class="th"><img src="img/p07.jpg" alt=""><span>02 Gym Profile</span><i class="dot p-must" title="Must-get"></i></a><a href="#look-3" class="th"><img src="img/p04.jpg" alt=""><span>03 Movement</span><i class="dot p-if" title="If time"></i></a><a href="#look-4" class="th"><img src="img/p01.jpg" alt=""><span>04 B&amp;W Documentary</span><i class="dot p-if" title="If time"></i></a><a href="#look-5" class="th"><img src="img/b1.jpg" alt=""><span>05 Gym Wide</span><i class="dot p-must" title="Must-get"></i></a><a href="#look-6" class="th"><img src="img/b2a.jpg" alt=""><span>06 Top-Light Walk</span><i class="dot p-must" title="Must-get"></i></a><a href="#look-7" class="th"><img src="img/b4.jpg" alt=""><span>07 Halo</span><i class="dot p-if" title="If time"></i></a><a href="#look-8" class="th"><img src="img/b3.jpg" alt=""><span>08 Side Rake</span><i class="dot p-must" title="Must-get"></i></a><a href="#look-9" class="th"><img src="img/p03.jpg" alt=""><span>09 Compression Hero</span><i class="dot p-if" title="If time"></i></a><a href="#look-10" class="th"><img src="img/p02.jpg" alt=""><span>10 Curl on Black</span><i class="dot p-must" title="Must-get"></i></a><a href="#look-11" class="th"><img src="img/b5.jpg" alt=""><span>11 Black Void</span><i class="dot p-must" title="Must-get"></i></a><a href="#look-12" class="th"><img src="img/b6.jpg" alt=""><span>12 Basement</span><i class="dot p-trip" title="Separate trip"></i></a></nav>
-    <p class="legend"><span><i class="dot p-must"></i>Must-get</span><span><i class="dot p-if"></i>If time</span><span><i class="dot p-trip"></i>Separate trip</span></p>
+    <h1>Balaji<br>Gym, Physique &amp; Gi</h1>
+    <p class="lede">Seventeen looks from twenty-seven references, in shoot order: clothed lifestyle while he warms up, working sets, shirtless low-key once he's pumped, the black-corner studio looks, then a martial-arts gi set. Every setting is a starting point for the 24–105 f/4 and three lights. Take one test frame, read the histogram and adjust.</p>
+    <nav class="strip" aria-label="Looks"><a href="#look-1" class="th"><img src="img/p13.jpg" alt=""><span>01 Between Sets</span><i class="dot p-if" title="If time"></i></a><a href="#look-2" class="th"><img src="img/p07.jpg" alt=""><span>02 Gym Profile</span><i class="dot p-must" title="Must-get"></i></a><a href="#look-3" class="th"><img src="img/p04.jpg" alt=""><span>03 Movement</span><i class="dot p-if" title="If time"></i></a><a href="#look-4" class="th"><img src="img/p01.jpg" alt=""><span>04 B&amp;W Documentary</span><i class="dot p-if" title="If time"></i></a><a href="#look-5" class="th"><img src="img/b1.jpg" alt=""><span>05 Gym Wide</span><i class="dot p-must" title="Must-get"></i></a><a href="#look-6" class="th"><img src="img/b2a.jpg" alt=""><span>06 Top-Light Walk</span><i class="dot p-must" title="Must-get"></i></a><a href="#look-7" class="th"><img src="img/b4.jpg" alt=""><span>07 Halo</span><i class="dot p-if" title="If time"></i></a><a href="#look-8" class="th"><img src="img/b3.jpg" alt=""><span>08 Side Rake</span><i class="dot p-must" title="Must-get"></i></a><a href="#look-9" class="th"><img src="img/p03.jpg" alt=""><span>09 Compression Hero</span><i class="dot p-if" title="If time"></i></a><a href="#look-10" class="th"><img src="img/p02.jpg" alt=""><span>10 Curl on Black</span><i class="dot p-must" title="Must-get"></i></a><a href="#look-11" class="th"><img src="img/b5.jpg" alt=""><span>11 Black Void</span><i class="dot p-must" title="Must-get"></i></a><a href="#look-12" class="th"><img src="img/g1.jpg" alt=""><span>12 Overhead Gi</span><i class="dot p-gi" title="Gi set"></i></a><a href="#look-13" class="th"><img src="img/g2.jpg" alt=""><span>13 Dojo Haze</span><i class="dot p-gi" title="Gi set"></i></a><a href="#look-14" class="th"><img src="img/g7.jpg" alt=""><span>14 Kneeling Rim</span><i class="dot p-gi" title="Gi set"></i></a><a href="#look-15" class="th"><img src="img/g4.jpg" alt=""><span>15 The Blade</span><i class="dot p-gi" title="Gi set"></i></a><a href="#look-16" class="th"><img src="img/g6.jpg" alt=""><span>16 Gi Profile</span><i class="dot p-gi" title="Gi set"></i></a><a href="#look-17" class="th"><img src="img/b6.jpg" alt=""><span>17 Basement</span><i class="dot p-trip" title="Separate trip"></i></a></nav>
+    <p class="legend"><span><i class="dot p-must"></i>Must-get</span><span><i class="dot p-if"></i>If time</span><span><i class="dot p-gi"></i>Gi set</span><span><i class="dot p-trip"></i>Separate trip</span></p>
   </header>
 
   <section class="plan">
     <div>
       <h3>2.5-hour run of show</h3>
-      <p>Twelve looks won't fit a 1:00–3:30 slot. Get the six must-gets, and add others only when a setup is already standing.</p>
+      <p>Seventeen looks won't fit a 1:00–3:30 slot. Get the six must-gets, and add others only when a setup is already standing.</p>
       <ol class="sched">
         <li><span>1:00</span>Unload, set the black corner up early, test frames with your assistant standing in</li>
         <li><span>1:20</span>02 Gym Profile, then 05 Gym Wide (gym lights on)</li>
@@ -111,6 +111,7 @@ a:focus-visible{outline:2px solid var(--amber)}
         <li><span>3:15</span>Pickups, BTS reel clips, pack down by 3:30</li>
       </ol>
       <p class="note">If time: 01 Between Sets, 03 Movement, 04 B&amp;W Documentary, 07 Halo, 09 Compression Hero.</p>
+      <p class="note">Gi set (12 Overhead Gi, 13 Dojo Haze, 14 Kneeling Rim, 15 The Blade, 16 Gi Profile): needs a 60–75 min slot of its own, ideally in a dojo. Book it as a second session, or swap it in for all the if-time looks.</p>
     </div>
     <div>
       <h3>Base camera setup (every look)</h3>
@@ -366,10 +367,115 @@ a:focus-visible{outline:2px solid var(--amber)}
   </div>
 </article>
 <article class="look" id="look-12">
-  <div class="refs"><img src="img/b6.jpg" alt="Reference for Basement" loading="lazy"></div>
+  <div class="refs"><img src="img/g1.jpg" alt="Reference for Overhead Gi" loading="lazy"></div>
   <div class="body">
     <header class="lh">
       <span class="no">12</span>
+      <div><h2>Overhead Gi <span class="pri p-gi">Gi set</span></h2><p class="tag">Top light, eyes from the dark · <span class="loc">Black corner · white gi</span></p></div>
+    </header>
+    <p class="read">Light straight down from above. It sculpts the folds of the white gi and leaves the face as a mask of shadow, with just a glint in the eyes as he looks up from under his brow. Faint rims on both sleeves stop the arms merging into the black. The look is gritty and high-clarity.</p>
+    <p class="wear"><b>Wear</b>White karate gi, black belt, bare feet</p>
+    <div class="grid2">
+      <section><h3>Camera · A7 III + 24–105 f/4</h3><dl class="cam"><dt>Mode</dt><dd>Manual · RAW</dd><dt>Focal</dt><dd>70mm, chest height, head to knees</dd><dt>Aperture</dt><dd>f/5.6</dd><dt>Shutter</dt><dd>1/125s</dd><dt>ISO</dt><dd>200, room lights OFF (a white gi is bright)</dd><dt>WB</dt><dd>5600K</dd><dt>AF</dt><dd>AF-C · Eye AF, falling back to Tracking Spot</dd></dl></section>
+      <section><h3>Light plan (top view)</h3><svg viewBox="0 0 260 210" class="dia" role="img" aria-label="Top-down lighting plan"><line x1="20" y1="14" x2="240" y2="14" class="bgline"/><text x="130" y="10" class="t sm" text-anchor="middle">Background</text><circle cx="130" cy="96" r="27" class="beam-ad over"/><text x="130" y="138" class="t lab-ad" text-anchor="middle">AD200 Pro overhead</text><polygon points="88.1,54.1 122.9,103.1 137.1,88.9" class="beam-it"/><g transform="translate(88.1,54.1) rotate(45.0)"><rect x="-5" y="-11" width="10" height="22" rx="2" class="fix-it"/></g><text x="88.1" y="42.1" class="t lab-it" text-anchor="middle">iT32</text><polygon points="171.9,54.1 122.9,88.9 137.1,103.1" class="beam-hf"/><g transform="translate(171.9,54.1) rotate(135.0)"><rect x="-5" y="-11" width="10" height="22" rx="2" class="fix-hf"/></g><text x="171.9" y="42.1" class="t lab-hf" text-anchor="middle">Hiffin 60W</text><circle cx="130" cy="96" r="9" class="subj"/><text x="161" y="100" class="t sm">Balaji</text><path d="M121,198 h18 v-12 h-4 l-2,-4 h-6 l-2,4 h-4 z" class="cam"/><text x="146" y="196" class="t sm">70mm</text></svg></section>
+    </div>
+    <section><h3>Lights</h3><ul class="lights"><li><span class="chip c-ad">AD200 Pro</span><span>Boomed straight overhead, 50cm above his head, 15cm toward camera. Softbox + grid. 1/32.</span></li><li><span class="chip c-it">iT32</span><span>Rim rear-left 135°, low, 1/64. Just the sleeve edge.</span></li><li><span class="chip c-hf">Hiffin 60W</span><span>Rim rear-right 135°, 5600K at 60%.</span></li></ul></section>
+    <div class="notes">
+      <p><b>Direct him</b>Feet shoulder-width, fists clenched at his sides, shoulders down. Chin down a little, eyes lifted into the lens. Breathe out through the nose and hold still.</p>
+      <p><b>Watch for</b>A white gi clips long before skin does. Set zebras to 95 and keep only the brightest folds touching it, so the weave keeps its texture. If the eyes go fully black, bring the boom 10cm further forward.</p>
+      <p><b>Edit</b>Desaturate, strong clarity and texture on the gi, burn the face down to a mask, keep a catchlight in the eyes. Heavy vignette.</p>
+    </div>
+  </div>
+</article>
+<article class="look" id="look-13">
+  <div class="refs"><img src="img/g2.jpg" alt="Reference for Dojo Haze" loading="lazy"></div>
+  <div class="body">
+    <header class="lh">
+      <span class="no">13</span>
+      <div><h2>Dojo Haze <span class="pri p-gi">Gi set</span></h2><p class="tag">Cinematic backlit stance · <span class="loc">Dojo or hall · haze · low angle</span></p></div>
+    </header>
+    <p class="read">A movie-poster frame. Hard backlight from high behind cuts through haze, a soft front key keeps the face readable, and a low camera angle with a reflective floor makes him monumental. The dojo banner and windows give the place without a word.</p>
+    <p class="wear"><b>Wear</b>White gi, coloured belt, hand wraps, bare feet</p>
+    <div class="grid2">
+      <section><h3>Camera · A7 III + 24–105 f/4</h3><dl class="cam"><dt>Mode</dt><dd>Manual · RAW</dd><dt>Focal</dt><dd>35mm, lens 40–50cm off the floor, tilted up</dd><dt>Aperture</dt><dd>f/4</dd><dt>Shutter</dt><dd>1/100s</dd><dt>ISO</dt><dd>800</dd><dt>WB</dt><dd>4500K</dd><dt>AF</dt><dd>AF-C · Eye AF</dd></dl></section>
+      <section><h3>Light plan (top view)</h3><svg viewBox="0 0 260 210" class="dia" role="img" aria-label="Top-down lighting plan"><line x1="20" y1="14" x2="240" y2="14" class="bgline"/><text x="130" y="10" class="t sm" text-anchor="middle">Banner · windows</text><polygon points="94.9,35.1 121.3,101.0 138.7,91.0" class="beam-ad"/><g transform="translate(94.9,35.1) rotate(60.0)"><rect x="-5" y="-11" width="10" height="22" rx="2" class="fix-ad"/></g><text x="94.9" y="23.1" class="t lab-ad" text-anchor="middle">AD200 Pro</text><polygon points="157.8,144.1 138.7,91.0 121.3,101.0" class="beam-hf"/><g transform="translate(157.8,144.1) rotate(-120.0)"><rect x="-5" y="-11" width="10" height="22" rx="2" class="fix-hf"/></g><text x="157.8" y="160.1" class="t lab-hf" text-anchor="middle">Hiffin 60W</text><polygon points="170.4,47.8 122.3,89.6 137.7,102.4" class="beam-it"/><g transform="translate(170.4,47.8) rotate(130.0)"><rect x="-5" y="-11" width="10" height="22" rx="2" class="fix-it"/></g><text x="170.4" y="35.8" class="t lab-it" text-anchor="middle">iT32</text><circle cx="130" cy="96" r="9" class="subj"/><text x="161" y="100" class="t sm">Balaji</text><path d="M121,198 h18 v-12 h-4 l-2,-4 h-6 l-2,4 h-4 z" class="cam"/><text x="146" y="196" class="t sm">35mm</text></svg></section>
+    </div>
+    <section><h3>Lights</h3><ul class="lights"><li><span class="chip c-ad">AD200 Pro</span><span>Backlight: bare / standard reflector, behind him camera-left at about 150°, stand at full height, aimed down through the haze. 1/8. Flag it so it doesn't flare the lens.</span></li><li><span class="chip c-hf">Hiffin 60W</span><span>Front key: camera-right 30°, 5600K at 60–80%, about 1.5m. It registers at ISO 800, 1/100s.</span></li><li><span class="chip c-it">iT32</span><span>Kicker rear-right at 1/32 for an edge on the far shoulder.</span></li></ul></section>
+    <div class="notes">
+      <p><b>Direct him</b>Natural fighting-ready stance, wrapped fists loose at belt height. Chin level, eyes off to camera-left toward the backlight. Hold, then a slow exhale for the frame.</p>
+      <p><b>Watch for</b>Haze only shows when it's backlit. For a cheap version, light 3–4 dhoop sticks behind him and give them 2 minutes (ask the venue first). A wet floor reflection only works on sealed floors: never wet tatami or wood, and it's slippery.</p>
+      <p><b>Edit</b>Teal shadows, warm skin, lift the haze glow, add a reflection-friendly gradient on the floor. Keep the belt colour saturated as the one accent.</p>
+    </div>
+  </div>
+</article>
+<article class="look" id="look-14">
+  <div class="refs many"><img src="img/g7.jpg" alt="Reference for Kneeling Rim" loading="lazy"><img src="img/g3.jpg" alt="Reference for Kneeling Rim" loading="lazy"></div>
+  <div class="body">
+    <header class="lh">
+      <span class="no">14</span>
+      <div><h2>Kneeling Rim <span class="pri p-gi">Gi set</span></h2><p class="tag">Seiza, outlined in light · <span class="loc">Mat on black · camera at kneeling height</span></p></div>
+    </header>
+    <p class="read">Two rims from behind trace the shoulders and sleeves while a low-power front key holds the face. The ref with the pool of light is the extreme version: one light behind and above him lights the floor in front, and he becomes almost a silhouette. Calm, centred, symmetrical.</p>
+    <p class="wear"><b>Wear</b>White judo or BJJ gi, black belt</p>
+    <div class="grid2">
+      <section><h3>Camera · A7 III + 24–105 f/4</h3><dl class="cam"><dt>Mode</dt><dd>Manual · RAW</dd><dt>Focal</dt><dd>50–70mm, lens at his chest height (you kneel too)</dd><dt>Aperture</dt><dd>f/5.6 · f/8 for the silhouette</dd><dt>Shutter</dt><dd>1/125s</dd><dt>ISO</dt><dd>400 · 200 for the silhouette</dd><dt>WB</dt><dd>5600K</dd><dt>AF</dt><dd>AF-C · Eye AF</dd></dl></section>
+      <section><h3>Light plan (top view)</h3><svg viewBox="0 0 260 210" class="dia" role="img" aria-label="Top-down lighting plan"><line x1="20" y1="14" x2="240" y2="14" class="bgline"/><text x="130" y="10" class="t sm" text-anchor="middle">Background</text><polygon points="130.0,136.7 140.0,96.0 120.0,96.0" class="beam-ad"/><g transform="translate(130.0,136.7) rotate(-90.0)"><rect x="-5" y="-11" width="10" height="22" rx="2" class="fix-ad"/></g><text x="130.0" y="152.7" class="t lab-ad" text-anchor="middle">AD200 Pro</text><polygon points="90.8,56.8 122.9,103.1 137.1,88.9" class="beam-it"/><g transform="translate(90.8,56.8) rotate(45.0)"><rect x="-5" y="-11" width="10" height="22" rx="2" class="fix-it"/></g><text x="90.8" y="44.8" class="t lab-it" text-anchor="middle">iT32</text><polygon points="169.2,56.8 122.9,88.9 137.1,103.1" class="beam-hf"/><g transform="translate(169.2,56.8) rotate(135.0)"><rect x="-5" y="-11" width="10" height="22" rx="2" class="fix-hf"/></g><text x="169.2" y="44.8" class="t lab-hf" text-anchor="middle">Hiffin 60W</text><circle cx="130" cy="96" r="9" class="subj"/><text x="161" y="100" class="t sm">Balaji</text><path d="M121,198 h18 v-12 h-4 l-2,-4 h-6 l-2,4 h-4 z" class="cam"/><text x="146" y="196" class="t sm">50–70mm</text></svg></section>
+    </div>
+    <section><h3>Lights</h3><ul class="lights"><li><span class="chip c-ad">AD200 Pro</span><span>Front key: softbox + grid, straight in front and high, low power 1/64. Silhouette variant: move it 1.5m directly behind him, 2.5m up, aimed down and forward at the floor, grid on, 1/8.</span></li><li><span class="chip c-it">iT32</span><span>Rim rear-left 135°, shoulder height when kneeling, 1/32.</span></li><li><span class="chip c-hf">Hiffin 60W</span><span>Rim rear-right 135°, 5600K, 100%.</span></li></ul></section>
+    <div class="notes">
+      <p><b>Direct him</b>Seiza, or cross-legged for BJJ. Back tall, hands resting on the thighs, elbows slightly out, chin level, a dead-centre stare into the lens. Centre him in the frame; this look wants symmetry.</p>
+      <p><b>Watch for</b>Lower the camera to his level, or the pose looks small. The rims flare easily from this angle, so flag both lights. On the silhouette, check the floor pool isn't clipping into flat white.</p>
+      <p><b>Edit</b>B&amp;W or near-B&amp;W, clean blacks, a slight glow on the rim edges. Keep the belt and lapel texture.</p>
+    </div>
+  </div>
+</article>
+<article class="look" id="look-15">
+  <div class="refs many"><img src="img/g4.jpg" alt="Reference for The Blade" loading="lazy"><img src="img/g5.jpg" alt="Reference for The Blade" loading="lazy"></div>
+  <div class="body">
+    <header class="lh">
+      <span class="no">15</span>
+      <div><h2>The Blade <span class="pri p-gi">Gi set</span></h2><p class="tag">Katana: side light and window light · <span class="loc">Wooden floor / plain grey wall</span></p></div>
+    </header>
+    <p class="read">Two quiet versions of the sword frame. Kneeling: a hard, low side light skims the floor and the gi from camera-right, and everything else falls off to black. Back view: soft side light from camera-left on a plain grey wall, shirtless in a hakama, muted and still. The sword's line does the composing.</p>
+    <p class="wear"><b>Wear</b>White gi or black hakama, hand wraps, iaito/bokken</p>
+    <div class="grid2">
+      <section><h3>Camera · A7 III + 24–105 f/4</h3><dl class="cam"><dt>Mode</dt><dd>Manual · RAW · B&amp;W preview for the kneeling frame</dd><dt>Focal</dt><dd>50mm (FE 50 is ideal for the back view)</dd><dt>Aperture</dt><dd>f/5.6 kneeling · f/4 back view</dd><dt>Shutter</dt><dd>1/125s</dd><dt>ISO</dt><dd>400</dd><dt>WB</dt><dd>5600K · 4800K for the back view</dd><dt>AF</dt><dd>AF-C · Eye AF · Tracking Spot on the shoulder for the back view</dd></dl></section>
+      <section><h3>Light plan (top view)</h3><svg viewBox="0 0 260 210" class="dia" role="img" aria-label="Top-down lighting plan"><line x1="20" y1="14" x2="240" y2="14" class="bgline"/><text x="130" y="10" class="t sm" text-anchor="middle">Black / grey wall</text><polygon points="178.7,113.7 133.4,86.6 126.6,105.4" class="beam-ad"/><g transform="translate(178.7,113.7) rotate(-160.0)"><rect x="-5" y="-11" width="10" height="22" rx="2" class="fix-ad"/></g><text x="178.7" y="129.7" class="t lab-ad" text-anchor="middle">AD200 Pro</text><polygon points="152.2,57.5 121.3,91.0 138.7,101.0" class="beam-hf"/><g transform="translate(152.2,57.5) rotate(120.0)"><rect x="-5" y="-11" width="10" height="22" rx="2" class="fix-hf"/></g><text x="152.2" y="45.5" class="t lab-hf" text-anchor="middle">Hiffin 60W</text><circle cx="130" cy="96" r="9" class="subj"/><text x="161" y="100" class="t sm">Balaji</text><path d="M121,198 h18 v-12 h-4 l-2,-4 h-6 l-2,4 h-4 z" class="cam"/><text x="146" y="196" class="t sm">50mm</text></svg></section>
+    </div>
+    <section><h3>Lights</h3><ul class="lights"><li><span class="chip c-ad">AD200 Pro</span><span>Kneeling: bare reflector + grid, camera-right 70°, only 80cm–1m off the floor so it rakes the boards, 1/32. Back view: swap to the softbox without grid, camera-left 90°, 1.5m, 1/32. Keep him 1m from the wall so it takes a soft gradient.</span></li><li><span class="chip c-hf">Hiffin 60W</span><span>Thin strip of light along the blade: low, behind the sword arm, 20–30%. Move it until the blade catches a single highlight line.</span></li><li><span class="chip c-it">iT32</span><span>Off.</span></li></ul></section>
+    <div class="notes">
+      <p><b>Direct him</b>Kneeling: sword upright in the near hand, other hand on the belt, eyes down to the floor in front. Back view: weight on the back foot, blade low and angled down, head turned to show the profile.</p>
+      <p><b>Watch for</b>Use a blunt iaito or a wooden bokken. Never a live blade with an assistant and lights around. A shiny blade shows every light in the room, so check the reflection before every frame.</p>
+      <p><b>Edit</b>Kneeling: B&amp;W, deep blacks, floor texture kept. Back view: desaturate 50%, cool greys, lift the blacks slightly for a matte film look.</p>
+    </div>
+  </div>
+</article>
+<article class="look" id="look-16">
+  <div class="refs"><img src="img/g6.jpg" alt="Reference for Gi Profile" loading="lazy"></div>
+  <div class="body">
+    <header class="lh">
+      <span class="no">16</span>
+      <div><h2>Gi Profile <span class="pri p-gi">Gi set</span></h2><p class="tag">Head down, texture up · <span class="loc">Black corner · judo gi</span></p></div>
+    </header>
+    <p class="read">A hard light from behind and to camera-left rakes across the thick gi weave and the shoulder. The face turns down and away into shadow; the story is weight and fatigue after the round. Very high clarity, desaturated, gritty.</p>
+    <p class="wear"><b>Wear</b>Heavy judo gi, black belt</p>
+    <div class="grid2">
+      <section><h3>Camera · A7 III + 24–105 f/4</h3><dl class="cam"><dt>Mode</dt><dd>Manual · RAW</dd><dt>Focal</dt><dd>85–105mm, tight from head to belt, vertical</dd><dt>Aperture</dt><dd>f/5.6</dd><dt>Shutter</dt><dd>1/125s</dd><dt>ISO</dt><dd>400, room lights OFF</dd><dt>WB</dt><dd>5600K</dd><dt>AF</dt><dd>AF-C · Tracking: Flexible Spot S on the near ear or shoulder</dd></dl></section>
+      <section><h3>Light plan (top view)</h3><svg viewBox="0 0 260 210" class="dia" role="img" aria-label="Top-down lighting plan"><line x1="20" y1="14" x2="240" y2="14" class="bgline"/><text x="130" y="10" class="t sm" text-anchor="middle">Background</text><polygon points="78.7,66.4 125.0,104.7 135.0,87.3" class="beam-ad"/><g transform="translate(78.7,66.4) rotate(30.0)"><rect x="-5" y="-11" width="10" height="22" rx="2" class="fix-ad"/></g><text x="78.7" y="54.4" class="t lab-ad" text-anchor="middle">AD200 Pro</text><polygon points="164.0,144.5 138.2,90.3 121.8,101.7" class="beam-hf"/><g transform="translate(164.0,144.5) rotate(-125.0)"><rect x="-5" y="-11" width="10" height="22" rx="2" class="fix-hf"/></g><text x="164.0" y="160.5" class="t lab-hf" text-anchor="middle">Hiffin 60W</text><circle cx="130" cy="96" r="9" class="subj"/><text x="161" y="100" class="t sm">Balaji</text><path d="M121,198 h18 v-12 h-4 l-2,-4 h-6 l-2,4 h-4 z" class="cam"/><text x="146" y="196" class="t sm">85–105mm</text></svg></section>
+    </div>
+    <section><h3>Lights</h3><ul class="lights"><li><span class="chip c-ad">AD200 Pro</span><span>Bare reflector + grid, camera-left at about 120° (behind him), above head height, tilted down, 1.2m. 1/32.</span></li><li><span class="chip c-hf">Hiffin 60W</span><span>Very low fill, front camera-right at 10–15%, just so the shadow side isn't empty.</span></li><li><span class="chip c-it">iT32</span><span>Off.</span></li></ul></section>
+    <div class="notes">
+      <p><b>Direct him</b>Turned 90° to camera, head bowed toward the chest, hands loose at the belt, shoulders slightly rounded as if catching his breath. Try a few frames breathing hard after 30 seconds of shadow work.</p>
+      <p><b>Watch for</b>Move the light a few degrees at a time: too far behind and the face vanishes completely, too far forward and the texture flattens. The weave should look like relief.</p>
+      <p><b>Edit</b>Strong texture and clarity, desaturate 60–70%, slightly cool, burn the background and lower body.</p>
+    </div>
+  </div>
+</article>
+<article class="look" id="look-17">
+  <div class="refs"><img src="img/b6.jpg" alt="Reference for Basement" loading="lazy"></div>
+  <div class="body">
+    <header class="lh">
+      <span class="no">17</span>
       <div><h2>Basement <span class="pri p-trip">Separate trip</span></h2><p class="tag">Parking-lot night · <span class="loc">Covered parking · separate location</span></p></div>
     </header>
     <p class="read">Location tells the story: the EXIT sign, pillars, cones and fluorescent tubes. A single high key from camera-right lands on his hair, chest and abs. The basement ambient is kept 2–3 stops under, so the space reads without competing.</p>
@@ -408,6 +514,7 @@ a:focus-visible{outline:2px solid var(--amber)}
         <li>Loose black joggers, fitted black jeans</li>
         <li>Black shorts and grey shorts</li>
         <li>Clean black sneakers, black cap, thin chain, black watch</li>
+        <li>Gi set: white gi (pressed), black belt, hand wraps, black hakama if he has one, blunt iaito or bokken</li>
         <li>No big logos, stripes or shiny fabric</li>
       </ul>
     </div>
